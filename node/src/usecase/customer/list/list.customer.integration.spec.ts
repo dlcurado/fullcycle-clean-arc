@@ -3,7 +3,7 @@ import CustomerModel from "../../../infrastructure/customer/repository/sequelize
 import CustomerRepository from "../../../infrastructure/customer/repository/sequelize/customer.repository";
 import Customer from "../../../domain/customer/entity/customer";
 import Address from "../../../domain/customer/value-object/address";
-import ListCustomerUserCase from "./list.customer.usecase";
+import ListCustomerUseCase from "./list.customer.usecase";
 
 describe("Integration test list customer use case", () => {
   let sequelize: Sequelize;
@@ -27,7 +27,7 @@ describe("Integration test list customer use case", () => {
   it("should list a customer", async () => {
     // Criando um customer
     const customerRepository = new CustomerRepository();
-    const useCaseCustomer = new ListCustomerUserCase(customerRepository);
+    const useCaseCustomer = new ListCustomerUseCase(customerRepository);
     
     const customer1 = new Customer("123", "Customer 1");
     const address1 = new Address("Street 1", 1, "Zipcode 1", "City 1");

@@ -49,7 +49,6 @@ export default class OrderItem {
     if(quantity < 0)
       throw new Error("The quantity must be grather than zero!");
     else{
-      console.log("Atualizando a quantidade")
       this._quantity = quantity;
     }
   }

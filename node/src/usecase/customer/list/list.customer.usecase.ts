@@ -2,7 +2,7 @@ import Customer from "../../../domain/customer/entity/customer";
 import CustomerRepositoryInterface from "../../../domain/customer/repository/customer-repository.interface";
 import { InputListCustomerDto, OutputListCustomerDto } from "./list.customer.dto";
 
-export default class ListCustomerUserCase {
+export default class ListCustomerUseCase {
   private CustomerRepository: CustomerRepositoryInterface;
   constructor(CustomerRepository: CustomerRepositoryInterface){
     this.CustomerRepository = CustomerRepository;

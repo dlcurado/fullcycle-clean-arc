@@ -67,7 +67,6 @@ export default class Order {
     // faz sentido pra mim atualizar as outras infos como name or price
     // Esse tipo de atualização não me parece fazer parte do dominio de Order
     else{
-      console.log("Item já existente")
       const itemFounded = this._items[itemIndex];
       itemFounded.updateQuantity(item.quantity);
     }
