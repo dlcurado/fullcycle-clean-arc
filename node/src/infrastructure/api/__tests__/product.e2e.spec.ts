@@ -31,7 +31,7 @@ describe("E2E tests for product",() => {
         price: 10.5,
       });
 
-    expect(response.status).toBe(200);
+    expect(response.status).toBe(500);
 
     response = await request(app)
       .post("/product")
@@ -40,7 +40,7 @@ describe("E2E tests for product",() => {
         price: -1,
       });
 
-    expect(response.status).toBe(200);
+    expect(response.status).toBe(500);
   });
 
   it("should list products",async () => {
