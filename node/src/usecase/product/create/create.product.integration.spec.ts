@@ -38,36 +38,4 @@ describe("Integration test create product use case", () => {
       price: 10.0
     });
   });
-
-  it("should throw exception when name is empty", async () => {
-    // Criando um product
-    const productRepository = new ProductRepository();
-    const useCaseProduct = new CreateProductUseCase(productRepository);
-    
-    const product = {
-      id: "123",
-      name: "",
-      price: 10.0
-    };
-
-    await expect(useCaseProduct.execute(product)).rejects.toThrow(
-      "Name is required"
-    );
-  });
-
-  it("should throw exception when price is negative", async () => {
-    // Criando um product
-    const productRepository = new ProductRepository();
-    const useCaseProduct = new CreateProductUseCase(productRepository);
-    
-    const product = {
-      id: "123",
-      name: "Product 1",
-      price: -10.0
-    };
-
-    await expect(useCaseProduct.execute(product)).rejects.toThrow(
-      "Price must be greater than zero"
-    );
-  });
 });

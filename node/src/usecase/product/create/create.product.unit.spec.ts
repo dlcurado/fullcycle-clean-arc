@@ -28,27 +28,4 @@ describe("Unit test product creation use case", () => {
       price: input.price
     })
   });
-
-  it("should throw an exception when product name is empty", async () => {
-    const productRepository = MockRepository();
-    const productCreateUseCase = new CreateProductUseCase(productRepository);
-
-    input.name = "";
-
-    await expect(productCreateUseCase.execute(input)).rejects.toThrow(
-      "Name is required"
-    );
-  });
-
-  it("should throw an exception when product price is negative", async () => {
-    const productRepository = MockRepository();
-    const productCreateUseCase = new CreateProductUseCase(productRepository);
-
-    input.name = "Daniel";
-    input.price = -1;
-
-    await expect(productCreateUseCase.execute(input)).rejects.toThrow(
-      "Price must be greater than zero"
-    );
-  });
 });

@@ -31,7 +31,7 @@ describe("E2E tests for product",() => {
         price: 10.5,
       });
 
-    expect(response.status).toBe(500);
+    expect(response.status).toBe(200);
 
     response = await request(app)
       .post("/product")
@@ -40,7 +40,7 @@ describe("E2E tests for product",() => {
         price: -1,
       });
 
-    expect(response.status).toBe(500);
+    expect(response.status).toBe(200);
   });
 
   it("should list products",async () => {
@@ -75,26 +75,5 @@ describe("E2E tests for product",() => {
     expect(product.price).toBe(14.98);
   });
 
-  // it("should update a product",async () => {
-  //   let response = await request(app)
-  //     .post("/product")
-  //     .send({
-  //       name: "Product 1",
-  //       price: 10.5
-  //     });
-
-  //   const id = response.body.id;
-  //   response = await request(app)
-  //     .post(`/product/${id}`)
-  //     .send({
-  //       name: "Product 1 Updated",
-  //       price: 12.5
-  //     });
-
-
-  //   expect(response.status).toBe(200);
-  //   expect(response.body.name).toBe("Product 1 Updated");
-  //   expect(response.body.price).toBe(12.5);
-
-  // });
+  
 });

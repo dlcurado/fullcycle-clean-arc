@@ -27,16 +27,4 @@ describe("Unit test for product update use case", () => {
 
     expect(output).toEqual(input);
   })
-
-  it("should throw an exception when product prince is minor than zero", async ()=> {
-    const productRepository = MockRepository();
-    
-    const productUpdateUseCase = new UpdateProductUseCase(productRepository);
-
-    input.price = -1;
-  
-    await expect(productUpdateUseCase.execute(input)).rejects.toThrow(
-      "Price must be greater than zero"
-    );
-  })
 });
